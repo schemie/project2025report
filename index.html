@@ -14,18 +14,11 @@
 </head>
 
 <script>
-    checkAccordion = () =>{
-    if( location.hash!=='' && 
-        (el=document.querySelector(location.hash)) && 
-        el.name ==='tabs' &&
-        !el.checked 
-        ) { 
-        el.scrollIntoView(); 
-        el.dispatchEvent( new MouseEvent('click') ); 
-      }
-    }
-    checkAccordion();
-    window.addEventListener('hashchange', checkAccordion);
+    $(document).ready(function(){
+    var url = window.location.href;
+    var start = url.substr(url.indexOf("#"));
+	$(start).collapse('show');
+    });
 </script>
 
 <style>
@@ -172,7 +165,9 @@ color: white;
     <footer class="container">
     </footer>
     <!-- ./ Footer -->
-
+    
 </body>
+
+
 
 </html>
