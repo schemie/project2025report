@@ -1,97 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark" />
     <title>Project 2025 - disaster in plain sight</title>
     <meta name="description" content="Project 2025 - disaster in plain sight" />
 
     <!-- Pico.css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css"
-    />
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-  <body>
+<script>
+    checkAccordion = () =>{
+    if( location.hash!=='' && 
+        (el=document.querySelector(location.hash)) && 
+        el.name ==='tabs' &&
+        !el.checked 
+        ) { 
+        el.scrollIntoView(); 
+        el.dispatchEvent( new MouseEvent('click') ); 
+      }
+    }
+    checkAccordion();
+    window.addEventListener('hashchange', checkAccordion);
+</script>
+
+<style>
+.fa {
+padding: 1rem;
+font-size: 1.5rem;
+width: 1rem;
+text-align: center;
+text-decoration: none;
+border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+color: white;
+}
+
+</style>
+<body>
     <!-- Header -->
     <header class="container">
-      <hgroup>
-        <h1>Project 2025</h1>
-        <p>A disaster in plain sight, spread the word.</p>
-      </hgroup>
+        <hgroup>
+            <h1>Project 2025</h1>
+            <p>A disaster in plain sight, spread the word.</p>
+        </hgroup>
     </header>
     <!-- ./ Header -->
 
     <!-- Main -->
     <main class="container">
 
-      <!-- purpose-->
-      <section id="purpose">
-        <p>
-        The purpose of this website is to simplify the act of sharing the worst parts of Project 2025.
-        </p>
+        <!-- purpose-->
+        <section id="purpose">
+            <p>
+                The purpose of this website is to simplify the act of sharing the worst parts of Project 2025.
+            </p>
 
-        <!-- Blockquote-->
-        <blockquote>
-          "Remember, democracy never lasts long. It soon wastes, exhausts, and murders itself. There never was a democracy yet that did not commit suicide."
-          <footer>
-            <cite>- John Adams</cite>
-          </footer>
-        </blockquote>
+            <!-- Blockquote-->
+            <blockquote>
+                "Remember, democracy never lasts long. It soon wastes, exhausts, and murders itself. There never was a
+                democracy yet that did not commit suicide."
+                <footer>
+                    <cite>John Adams</cite>
+                </footer>
+            </blockquote>
 
-      <!-- Accordions -->
-      <section id="accordions">
-        <details>
-            <summary><h3>eliminate the department of education</h3></summary>
-            <p>
-                <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/319/mode/1up?view=theater" target="_blank">Page 319</a>:
-                Federal education policy should be limited and, ultimately, the federal Department of Education should be eliminated.
-            </p>
-        </details>
-        <details>
-            <summary><h3>end legal protections for sexual orientation and gender identity</h3></summary>
-            <p>
-                <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/4/mode/1up?view=theater" target="_blank">Page 4</a>:
-                This starts with deleting the terms sexual orientation and gender identity (““SOGI”), diversity, equity, and inclusion (“DEI”), gender, gender equality, gender equity, gender awareness, gender-sensitive, abortion, reproductive health, reproductive rights, and any other term used to deprive Americans of their First Amendment rights out of every federal rule, agency regulation, contract, grant, regulation, and piece of legislation that exists.
-            </p>
-            <p>
-                <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/495/mode/1up?view=theater" target="_blank">Page 495</a>:
-                Remove all guidance issued under the Biden Administration concerning sexual orientation and gender identity … Issue a general statement of policy specifying that it will not enforce any prohibition on sexual orientation and gender identity discrimination
-            </p>
-        </details>
-        <details>
-            <summary><h3>outlaw pornography (definition left open)</h3></summary>
-            <p>
-            <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/5/mode/1up?view=theater" target="_blank">Page 5</a>:
-            Pornography should be outlawed. The people who produce and distribute it should be imprisoned. ... And telecommunications and technology firms that facilitate its spread should be shuttered.
-            </p>
-        </details>
-        <details>
-          <summary><h3>end nuclear nonproliferation activities</h3></summary>
-          <p>
-          <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/372/mode/1up?view=theater" target="_blank">Page 372</a>:
-          End ineffective and counterproductive nonproliferation activities like those involving Iran and the United Nations.
-          </p>
-          <p>
-            <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/94/mode/1up?view=theater" target="_blank">Page 94</a>:
-            Implement nuclear modernization and expansion. The United States manifestly needs to modernize, adapt, and expand its nuclear arsenal. Russia maintains and is actively brandishing a very large nuclear arsenal, but China is also undertaking a historic nuclear breakout.
-            </p>
-        </details>
-        <details>
-            <summary><h3>defund and strip away NCE status from NPR and PBS</h3></summary>
-            <p>
-            <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/247/mode/1up?view=theater" target="_blank">Page 247</a>:
-            The 47th President can just tell the Congress—through the budget he proposes and through personal contact—that he will not sign an appropriations spending bill that contains a penny for the CPB.
-            </p>
-            <p>
-            <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/248/mode/1up?view=theater" target="_blank">Page 248</a>:
-            The next President should instruct the FCC to exclude the stations affiliated with PBS and NPR from the NCE* denomination and the privileges that come with it.
-            </p>
-          </details>
-      </section>
-      <!-- ./ Accordions -->
+            <!-- Accordions -->
+            <section id="accordions">
+                <details>
+                    <summary id="1" role="button" class="outline contrast"><strong>eliminate the department of
+                            education</strong></summary>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/share?url=<URL>&text=<TEXT>" class="fa fa-twitter"></a>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/319/mode/1up?view=theater"
+                            target="_blank">Page 319</a>:
+                        Federal education policy should be limited and, ultimately, the federal Department of Education
+                        should be eliminated.
+                    </p>
+                </details>
+                <details>
+                    <summary id="2" role="button" class="outline contrast"><strong>end legal protections for sexual orientation
+                            and gender identity</strong></summary>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/4/mode/1up?view=theater"
+                            target="_blank">Page 4</a>:
+                        This starts with deleting the terms sexual orientation and gender identity (““SOGI”), diversity,
+                        equity, and inclusion (“DEI”), gender, gender equality, gender equity, gender awareness,
+                        gender-sensitive, abortion, reproductive health, reproductive rights, and any other term used to
+                        deprive Americans of their First Amendment rights out of every federal rule, agency regulation,
+                        contract, grant, regulation, and piece of legislation that exists.
+                    </p>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/495/mode/1up?view=theater"
+                            target="_blank">Page 495</a>:
+                        Remove all guidance issued under the Biden Administration concerning sexual orientation and
+                        gender identity … Issue a general statement of policy specifying that it will not enforce any
+                        prohibition on sexual orientation and gender identity discrimination
+                    </p>
+                </details>
+                <details>
+                    <summary id="3" role="button" class="outline contrast"><strong>outlaw pornography (definition left
+                            open)</strong></summary>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/5/mode/1up?view=theater"
+                            target="_blank">Page 5</a>:
+                        Pornography should be outlawed. The people who produce and distribute it should be imprisoned.
+                        ... And telecommunications and technology firms that facilitate its spread should be shuttered.
+                    </p>
+                </details>
+                <details>
+                    <summary id="4" role="button" class="outline contrast"><strong>end nuclear nonproliferation
+                            activities</strong></summary>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/372/mode/1up?view=theater"
+                            target="_blank">Page 372</a>:
+                        End ineffective and counterproductive nonproliferation activities like those involving Iran and
+                        the United Nations.
+                    </p>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/94/mode/1up?view=theater"
+                            target="_blank">Page 94</a>:
+                        Implement nuclear modernization and expansion. The United States manifestly needs to modernize,
+                        adapt, and expand its nuclear arsenal. Russia maintains and is actively brandishing a very large
+                        nuclear arsenal, but China is also undertaking a historic nuclear breakout.
+                    </p>
+                </details>
+                <details>
+                    <summary id="5" role="button" class="outline contrast"><strong>defund and strip away NCE status from NPR
+                            and PBS</strong></summary>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/247/mode/1up?view=theater"
+                            target="_blank">Page 247</a>:
+                        The 47th President can just tell the Congress—through the budget he proposes and through
+                        personal contact—that he will not sign an appropriations spending bill that contains a penny for
+                        the CPB.
+                    </p>
+                    <p>
+                        <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/248/mode/1up?view=theater"
+                            target="_blank">Page 248</a>:
+                        The next President should instruct the FCC to exclude the stations affiliated with PBS and NPR
+                        from the NCE* denomination and the privileges that come with it.
+                    </p>
+                </details>
+            </section>
+            <!-- ./ Accordions -->
 
     </main>
     <!-- ./ Main -->
@@ -101,5 +173,6 @@
     </footer>
     <!-- ./ Footer -->
 
-  </body>
+</body>
+
 </html>
