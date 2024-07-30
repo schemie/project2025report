@@ -13,13 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<script>
-    $(document).ready(function(){
-    var url = window.location.href;
-    var start = url.substr(url.indexOf("#"));
-	$(start).collapse('show');
-    });
-</script>
+
 
 <style>
 .fa {
@@ -49,6 +43,7 @@ color: white;
 }
 
 </style>
+
 <body>
     <!-- Header -->
     <header class="container">
@@ -166,8 +161,14 @@ color: white;
     </footer>
     <!-- ./ Footer -->
     
+    <script>
+        $(document).ready(function(){
+        var url = window.location.href;
+        var start = url.substr(url.indexOf("#"));
+        $(start).collapse('show');
+        });
+    </script>
+
 </body>
-
-
 
 </html>
