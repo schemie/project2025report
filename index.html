@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    .fa {
+    padding: 1rem;
+    font-size: 1.5rem;
+    width: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    }
+    
+    /* Add a hover effect if you want */
+    .fa:hover {
+    opacity: 0.7;
+    }
+    
+    /* Set a specific color for each brand */
+    
+    /* Facebook */
+    .fa-facebook {
+    color: white;
+    }
+    
+    /* Twitter */
+    .fa-twitter {
+    color: white;
+    }
+    
+</style>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,37 +41,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
-
-
-<style>
-.fa {
-padding: 1rem;
-font-size: 1.5rem;
-width: 1rem;
-text-align: center;
-text-decoration: none;
-border-radius: 50%;
-}
-
-/* Add a hover effect if you want */
-.fa:hover {
-opacity: 0.7;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-color: white;
-}
-
-</style>
 
 <body>
     <!-- Header -->
@@ -74,8 +72,8 @@ color: white;
 
             <!-- Accordions -->
             <section id="accordions">
-                <details>
-                    <summary id="1" role="button" class="outline contrast"><strong>eliminate the department of
+                <details id="1">
+                    <summary role="button" class="outline contrast"><strong>eliminate the department of
                             education</strong></summary>
                     <a href="#" class="fa fa-facebook"></a>
                     <a href="https://twitter.com/share?url=<URL>&text=<TEXT>" class="fa fa-twitter"></a>
@@ -86,8 +84,8 @@ color: white;
                         should be eliminated.
                     </p>
                 </details>
-                <details>
-                    <summary id="2" role="button" class="outline contrast"><strong>end legal protections for sexual orientation
+                <details id="2">
+                    <summary role="button" class="outline contrast"><strong>end legal protections for sexual orientation
                             and gender identity</strong></summary>
                     <p>
                         <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/4/mode/1up?view=theater"
@@ -106,8 +104,8 @@ color: white;
                         prohibition on sexual orientation and gender identity discrimination
                     </p>
                 </details>
-                <details>
-                    <summary id="3" role="button" class="outline contrast"><strong>outlaw pornography (definition left
+                <details id="3" >
+                    <summary role="button" class="outline contrast"><strong>outlaw pornography (definition left
                             open)</strong></summary>
                     <p>
                         <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/5/mode/1up?view=theater"
@@ -116,8 +114,8 @@ color: white;
                         ... And telecommunications and technology firms that facilitate its spread should be shuttered.
                     </p>
                 </details>
-                <details>
-                    <summary id="4" role="button" class="outline contrast"><strong>end nuclear nonproliferation
+                <details id="4" >
+                    <summary role="button" class="outline contrast"><strong>end nuclear nonproliferation
                             activities</strong></summary>
                     <p>
                         <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/372/mode/1up?view=theater"
@@ -133,8 +131,8 @@ color: white;
                         nuclear arsenal, but China is also undertaking a historic nuclear breakout.
                     </p>
                 </details>
-                <details>
-                    <summary id="5" role="button" class="outline contrast"><strong>defund and strip away NCE status from NPR
+                <details id="5">
+                    <summary role="button" class="outline contrast"><strong>defund and strip away NCE status from NPR
                             and PBS</strong></summary>
                     <p>
                         <a href="https://archive.org/details/2025_MandateForLeadership_FULL/page/247/mode/1up?view=theater"
@@ -160,14 +158,52 @@ color: white;
     <footer class="container">
     </footer>
     <!-- ./ Footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-    <script>
+    <script language='JavaScript' type='text/JavaScript'>
+        function MakeArrayOfAllPrefixes(str){
+          //console.log("MakeArrayOfAllPrefixes("+str+")");
+          var prefixes = [];
+          for (var i=1; i<=str.length; i++){
+            prefixes.push(str.substr(0,i));
+          }
+          console.log("MakeArrayOfAllPrefixes("+str+") -> returns [" + prefixes + "]");
+          return prefixes;
+        }
+        
+        function SetOpenAttrForIdsAndPrefixes(ids, openAttrBool){
+          $('details').attr('open',false); // close all others first
+          console.log("SetOpenAttrForIds([" +ids+"], "+openAttrBool+")");
+          for (idindex in ids) {
+            var id = ids[idindex];
+            if (id != ""){
+              var prefixes = MakeArrayOfAllPrefixes(id);
+              for (prefixidx in prefixes) {
+                var prefix = prefixes[prefixidx];
+                if(openAttrBool==true) { operationstr="Opening"; } else { operationstr="Closing"};
+                console.log(operationstr+" <details id='#"+prefix+"'> with $('#"+prefix+").attr('open',"+openAttrBool+");");
+                $('#'+prefix).attr('open',openAttrBool);
+              }
+            }
+          }
+        }
+        
+        function SetOpenAttrForIdsAndPrefixesFromLocationHash(){
+          var hashes = $(location).attr('hash').split('#'); 
+          SetOpenAttrForIdsAndPrefixes(hashes, true); 
+        }
+        
         $(document).ready(function(){
-        var url = window.location.href;
-        var start = url.substr(url.indexOf("#"));
-        $(start).collapse('show');
+          SetOpenAttrForIdsAndPrefixesFromLocationHash();
+        
+          if ("onhashchange" in window) {// does the browser support the hashchange event?
+              window.onhashchange = function () {
+                 SetOpenAttrForIdsAndPrefixesFromLocationHash();
+              }
+          }
         });
-    </script>
+        </script>
 
 </body>
 
